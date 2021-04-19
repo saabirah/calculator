@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('calculator');
+    return view('welcome');
 });
+Route::post('/ajouter','AdditionController@ajout');
+Route::get('/form', 'AdditionController@affiche');
+Route::delete('/supprimer/{somme}', 'AdditionController@supprimer')->name('supp');
 
-Route::post('calculation', 'CalculatorController@index');
+
 
